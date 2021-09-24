@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">AndroidMVPMoxyCicerone</string>
+    <string name="user">Пользователь</string>
+    <string name="close">Закрыть</string>
 </resources>
