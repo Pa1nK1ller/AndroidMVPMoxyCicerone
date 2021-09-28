@@ -1,6 +1,7 @@
 package com.example.androidmvpmoxycicerone.presentation
 
 import com.example.androidmvpmoxycicerone.App
+import com.example.androidmvpmoxycicerone.model.GithubUser
 import com.example.androidmvpmoxycicerone.model.GithubUsersRepo
 import com.example.androidmvpmoxycicerone.screens.IScreens
 import com.example.androidmvpmoxycicerone.view.ui.UsersView
@@ -30,8 +31,12 @@ class UsersPresenter(
     }
 
     private fun loadData() {
-        val users = usersRepo.getUsers()
-        usersListPresenter.users.addAll(users)
+        usersRepo.getUsers()
+            .map { user ->
+                GithubUser(user.login)
+            }.subscribe { user ->
+                usersListPresenter.users.add(user)
+            }
         viewState.updateList()
     }
 

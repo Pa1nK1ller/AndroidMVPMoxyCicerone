@@ -48,12 +48,17 @@ dependencies {
 
     implementation 'com.github.terrakok:cicerone:6.6'
 
+// Moxy
     def moxy_ver = '2.2.2'
     implementation "com.github.moxy-community:moxy:$moxy_ver"
     kapt "com.github.moxy-community:moxy-compiler:$moxy_ver"
-
     implementation "com.github.moxy-community:moxy-ktx:$moxy_ver"
     implementation "com.github.moxy-community:moxy-androidx:$moxy_ver"
+
+    // RxJava
+    implementation "io.reactivex.rxjava3:rxandroid:3.0.0"
+    implementation "io.reactivex.rxjava3:rxjava:3.0.13"
+    implementation "io.reactivex.rxjava3:rxkotlin:3.0.1"
 
     testImplementation 'junit:junit:4.13.1'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
